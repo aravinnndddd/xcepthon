@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-
   html,
   body {
     /* Hide scrollbar for IE, Edge and Firefox */
@@ -12,7 +11,7 @@
   }
 
   body {
-    background-color: theme('colors.goku.dark');
+    background-color: theme("colors.goku.dark");
     color: white;
     position: relative;
   }
@@ -39,17 +38,29 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 10px rgba(225, 91, 10, 0.8), 0 0 20px rgba(225, 91, 10, 0.5);
-    /* E15B0A */
+    text-shadow:
+      0 0 10px rgba(209, 66, 6, 0.8),
+      0 0 20px rgba(209, 66, 6, 0.5);
+    /* D14206 */
   }
 
   .text-glow-yellow {
-    text-shadow: 0 0 10px rgba(216, 197, 173, 0.8), 0 0 20px rgba(216, 197, 173, 0.5);
+    text-shadow:
+      0 0 10px rgba(216, 197, 173, 0.8),
+      0 0 20px rgba(216, 197, 173, 0.5);
     /* D8C5AD */
   }
 
   .glass-panel {
     @apply bg-goku-navy/40 backdrop-blur-md border border-goku-indigo/30 shadow-lg;
+  }
+
+  .text-paper {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23D8C5AD'/%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.25' style='mix-blend-mode:multiply;'/%3E%3C/svg%3E");
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -69,7 +80,6 @@
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     opacity: 1;
