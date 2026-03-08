@@ -185,16 +185,9 @@ const Hero = () => {
             </span>
           </button>
 
-          <a
-            href="#tracks"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#tracks")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-8 py-4 text-white font-accent text-lg tracking-widest border-b-2 border-transparent hover:border-goku-yellow transition-all flex items-center gap-2 hover:text-goku-yellow"
-          >
+          <button className="px-8 py-4 text-white font-accent text-lg tracking-widest border-b-2 border-transparent hover:border-goku-yellow transition-all flex items-center gap-2 hover:text-goku-yellow">
             VIEW TRACKS
-          </a>
+          </button>
         </motion.div>
       </motion.div>
 
