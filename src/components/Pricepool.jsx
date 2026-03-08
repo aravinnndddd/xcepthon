@@ -4,11 +4,10 @@ import { Trophy, Medal, Award, Zap } from "lucide-react";
 import gokuImg from "../assets/goku.png";
 
 const PrizePool = () => {
-
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end center"]
+    offset: ["start end", "end center"],
   });
 
   // Background glow paralax movements
@@ -45,12 +44,11 @@ const PrizePool = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ── LAYOUT: mirrors the reference — tall left card | center heading | right grid ── */}
         <div className="flex flex-col lg:flex-row gap-6 items-stretch min-h-[520px]">
-
           {/* ── LEFT: Total Prize Pool Card (Now with Goku Push) ─────────────────────────── */}
           <motion.div
             style={{ y: leftCardY }}
             className="relative lg:w-[260px] flex-shrink-0 z-20"
-            initial={{ x: -500, opacity: 0 }}
+            initial={{ x: -300, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
@@ -58,14 +56,14 @@ const PrizePool = () => {
               stiffness: 100,
               damping: 20,
               mass: 1.2,
-              delay: 0.1
+              delay: 0.1,
             }}
           >
             {/* Goku Image pushing the card */}
             <img
               src={gokuImg}
               alt="Goku"
-              className="hidden lg:block absolute z-30 object-contain drop-shadow-[0_0_20px_rgba(255,94,0,0.6)]"
+              className="max-[1018px]:hidden block absolute z-30 object-contain drop-shadow-[0_0_20px_rgba(255,94,0,0.6)]"
               style={{
                 height: "500px",
                 left: "-240px",
@@ -78,11 +76,16 @@ const PrizePool = () => {
             {/* Your EXACT original left card, now inside the animated wrapper */}
             <div className="relative rounded-3xl overflow-hidden flex flex-col justify-between p-8 min-h-[480px] w-full h-full">
               {/* dynamic inline style merged with fixed tailwind background */}
-              <div className="absolute inset-0 pointer-events-none" style={{
-                background: "linear-gradient(160deg, #1a0a00 0%, #ff5e00 60%, #ff9a00 100%)",
-                boxShadow: "0 0 60px rgba(255,94,0,0.4), 0 0 120px rgba(255,94,0,0.15)",
-                zIndex: -1
-              }}></div>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(160deg, #1a0a00 0%, #ff5e00 60%, #ff9a00 100%)",
+                  boxShadow:
+                    "0 0 60px rgba(255,94,0,0.4), 0 0 120px rgba(255,94,0,0.15)",
+                  zIndex: -1,
+                }}
+              ></div>
 
               {/* Grid pattern overlay */}
               <div
@@ -91,7 +94,7 @@ const PrizePool = () => {
                   backgroundImage:
                     "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
                   backgroundSize: "32px 32px",
-                  zIndex: -1
+                  zIndex: -1,
                 }}
               />
 
@@ -105,7 +108,9 @@ const PrizePool = () => {
               {/* Big number */}
               <div className="relative z-10 my-auto py-8">
                 <motion.p
-                  style={{ scale: useTransform(scrollYProgress, [0.3, 0.7], [0.8, 1]) }}
+                  style={{
+                    scale: useTransform(scrollYProgress, [0.3, 0.7], [0.8, 1]),
+                  }}
                   className="font-heading text-7xl text-white leading-none"
                   initial={{ textShadow: "0 0 0px rgba(255,255,255,0)" }}
                   animate={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}
@@ -135,7 +140,7 @@ const PrizePool = () => {
             <motion.div
               style={{
                 opacity: useTransform(scrollYProgress, [0.1, 0.5], [0, 1]),
-                y: useTransform(scrollYProgress, [0.1, 0.5], [50, 0])
+                y: useTransform(scrollYProgress, [0.1, 0.5], [50, 0]),
               }}
             >
               <p className="font-accent text-goku-orange tracking-[0.3em] uppercase text-sm mb-3">
@@ -147,9 +152,7 @@ const PrizePool = () => {
               >
                 Meet Our
                 <br />
-                <span className=" text-yellow-400 ">
-                  Prize Pool
-                </span>
+                <span className=" text-yellow-400 ">Prize Pool</span>
               </h2>
               <div className="mt-4 h-1 w-20 bg-gradient-to-r from-goku-orange to-transparent lg:mx-0 mx-auto" />
               <p className="mt-5 text-gray-400 font-sans text-base max-w-sm lg:mx-0 mx-auto">
@@ -170,12 +173,16 @@ const PrizePool = () => {
               viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
-              <div className="absolute inset-0 pointer-events-none" style={{
-                background: "linear-gradient(140deg, #111130 0%, #1a1a45 100%)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                boxShadow: "0 0 30px rgba(34,211,238,0.08)",
-                zIndex: -1
-              }}></div>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(140deg, #111130 0%, #1a1a45 100%)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  boxShadow: "0 0 30px rgba(34,211,238,0.08)",
+                  zIndex: -1,
+                }}
+              ></div>
               {/* Zigzag / chevron pattern overlay */}
               <div
                 className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -183,7 +190,7 @@ const PrizePool = () => {
                   backgroundImage:
                     "repeating-linear-gradient(45deg, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.5) 1px, transparent 0, transparent 50%)",
                   backgroundSize: "18px 18px",
-                  zIndex: -1
+                  zIndex: -1,
                 }}
               />
 
@@ -241,12 +248,16 @@ const PrizePool = () => {
               transition={{ duration: 1 }}
               className="relative rounded-2xl overflow-hidden p-6 flex-1 flex flex-col justify-between"
             >
-              <div className="absolute inset-0 pointer-events-none" style={{
-                background: "linear-gradient(135deg, #1a1200 0%, #332800 50%, #1a1200 100%)",
-                border: "1px solid rgba(255,180,0,0.15)",
-                boxShadow: "0 0 30px rgba(255,160,0,0.1)",
-                zIndex: -1
-              }}></div>
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #1a1200 0%, #332800 50%, #1a1200 100%)",
+                  border: "1px solid rgba(255,180,0,0.15)",
+                  boxShadow: "0 0 30px rgba(255,160,0,0.1)",
+                  zIndex: -1,
+                }}
+              ></div>
               <p className="font-accent text-xs tracking-[0.3em] uppercase text-yellow-500/70 mb-3 relative z-10">
                 Our Sponsor
               </p>
