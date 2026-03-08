@@ -37,11 +37,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-goku-dark/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-white/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? "bg-goku-dark/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-white/10"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -76,7 +75,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <button className="relative px-6 py-2 bg-goku-indigo/20 border border-goku-indigo text-white hover:bg-goku-indigo font-accent tracking-widest text-sm transition-all duration-300 group overflow-hidden">
+            <button className="relative px-6 py-2 bg-goku-indigo/20 border border-goku-indigo text-white hover:bg-goku-indigo font-accent tracking-widest text-sm transition-all duration-300 group overflow-hidden rounded-full">
               <span className="relative z-10">REGISTER NOW</span>
               <div className="absolute inset-0 h-full w-full bg-goku-indigo transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 opacity-20"></div>
             </button>

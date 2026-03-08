@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'shredded';
+  src: url('/shredded.ttf');
+}
+
 @layer base {
+
   html,
   body {
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     scrollbar-width: none;
+
   }
 
   body {
@@ -80,6 +87,7 @@
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     opacity: 1;
